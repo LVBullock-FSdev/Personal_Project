@@ -1,0 +1,26 @@
+Laura V. Bullock
+Projects & Algorithms - October 2021
+Solo Project Proposal
+
+Title:  Real Estate Portfolio Management System
+
+MVP Features:
+- Registration and Login page with validations
+- User will be able to Logout 
+- User can [create/add] new properties to database
+- User can [read/retrieve one] property's details
+- User can sort columns
+- Property will have checkbox feature
+- User may [edit] posted data about a property 
+- User may [delete] a property
+- Application includes protected route (user must be in session to view)
+- Application will have static content (CSS, images, may include JS??)
+- Created data will have validations (no duplicate data - will try to implement)
+- Application will have an API
+- Implementation of a file/image upload feature.
+
+Backlog:
+- Search bar
+
+
+github link:  https://github.com/LVBullock-FSdev/Personal_Project
