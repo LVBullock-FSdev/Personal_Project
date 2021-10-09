@@ -86,8 +86,7 @@ const PropertySchema = new mongoose.Schema({
 
     zip: {
         type: Number,
-        required: [true, "Zip Code is required."],
-        min: [5]
+        required: [true, "Zip Code is required."], //unable to set a maximum value?????
     },
 
     opportunityZone: {
@@ -103,25 +102,25 @@ const PropertySchema = new mongoose.Schema({
     purchasePrice: {
         type: Number,
         required: [true, "Purchase Price is required."],
-        min: [1]
+        min:[1]
         },
 
     rehabCost: {
         type: Number,
         required: [true, "Rehab Cost is required."],
-        min:[3]
+        min:[1]
     },
 
     arv: {
         type: Number,
         required: [true, "ARV is required."],
-        min:[3]
+        min:[1]
     },
     
     netProfit: {
         type: Number,
         required: [true, "Net Profit is required."],
-        min:[3]
+        min:[1]
     },
 
     beforeImages:{

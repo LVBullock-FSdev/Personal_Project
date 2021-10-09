@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, navigate } from '@reach/router';
+import { Link } from '@reach/router';
 import DeleteProperty from './DeleteProperty';
 import Header from './Header';
 
@@ -10,27 +10,15 @@ const OneProperty = (props) =>{
     const [oneProperty, setOneProperty] = useState({});
 
     useEffect(() =>{
-        axios.get(`http://localhost:8000/api/properties/${props.id}`,
-        oneProperty,
-        {
-            withCredentials: true
-        })
+        axios.get(`http://localhost:8000/api/properties/${props.id}`)
         .then((res) =>{
             console.log(res);
             console.log(res.data);
             setOneProperty(res.data);
         })
         // .catch((err) => console.log(err))
-        .catch((err)=>{
-            console.log(err);
-            console.log(err.response.data.errors);
-            if(err.response.status === 401){
-                navigate("/");
-            }
-            if(err.response.data.errors){
-                setErrors(err.response.data.errors);
-            }
-        })
+        .catch((err)=> console.log(err));
+ 
     }, [props.id]) //if I do not add props.id, will throw a warning.
 
 

@@ -31,7 +31,7 @@ const DeleteProperty = (props) =>{
             else{
                 console.log("Failed to Filter");
 
-                navigate('/');
+                navigate('/properties');
             }
         })
         .catch((err) => {
