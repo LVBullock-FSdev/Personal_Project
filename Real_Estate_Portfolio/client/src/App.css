@@ -1,0 +1,301 @@
+html, body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-size: 20px;
+}
+
+.App {
+  text-align: left;
+  margin: 20px;
+  /* width: 100vw; */
+}
+
+.reglog{
+  display: inline-block; 
+  vertical-align: top;
+  text-align: center;
+}
+
+.regLogForm {
+  text-align:center;
+  margin: 40px;
+}
+
+.regLogForm label {
+  display: block;
+  width: 200px;
+  margin:auto;
+  font-size: 22px;
+}
+
+.error-text{
+  background-color: yellow;
+  color: red;
+  text-align: center;
+}
+
+input {
+  width: 250px;
+  border: 2px solid black;
+  font-size: 18px;
+}
+
+input, select{
+  width: 200px;
+  margin:10px auto;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+ul{
+  display:flex;
+  justify-content:space-around;
+  list-style:none;
+}
+
+li{
+  font-size: 22px;
+  color: white;
+  list-style: none;
+} 
+
+a{
+  text-decoration: none;
+  color:black;
+}
+
+a:hover, 
+li:hover, 
+button:hover,
+th:nth-child(1):hover, 
+th:nth-child(4):hover, 
+th:nth-child(5):hover,
+th:nth-child(6):hover,
+th:nth-child(10):hover 
+{
+  cursor: pointer;
+  color: blue;
+}
+
+.headerLogoutBtn li:hover{
+  color: orange;
+}
+
+.table-sortable 
+th:nth-child(1), 
+th:nth-child(4), 
+th:nth-child(5),
+th:nth-child(6),
+th:nth-child(10){
+  cursor: pointer;
+}
+
+small{
+  font-size: 10px;
+}
+
+button {
+  background-color: darkgray;
+  color: black;
+  font-size: medium;
+  width: 80px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 3px;
+  box-shadow: 10px 10px 11px;
+  margin: 7px 3px;
+}
+
+.headerBtn, .headerLogoutBtn{
+  width: 250px;
+  background-color: black;
+  box-shadow: 10px 10px 11px;
+}
+
+.headerRowBtn{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+}
+
+button .headerLogoutBtn{
+  color: white;
+
+}
+
+.signIn{
+  width: auto;
+}
+.signIn:hover, .submitBtn:hover{
+  color: green;
+}
+
+.uploadBtn:hover{
+  color: black;
+}
+
+.headerLogoutBtn:hover{
+  color: orange;
+}
+
+.deleteBtn:hover{
+  color: red;
+}
+
+.uploadBtn:hover{
+  color: blue;
+}
+
+.tableHeadRow2{
+  text-align: center;
+  border: 2px solid black;
+}
+
+.tableHeadRow2 th{
+  border-right: 2px solid black;
+
+}
+
+table td, thead, tr{
+  border: 2px solid black; 
+}
+
+thead{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.location{
+  width: 100px;
+  text-align: center;
+  border: 2px solid black;
+  border-top-left-radius: 5px;
+}
+
+.onePropertyTableDiv,
+div .onePropertyImages {
+  margin-top: 20px;
+  display: inline-block; 
+  vertical-align: top;
+}
+div .onePropertyImages {
+  vertical-align: middle;
+}
+
+.onePropertyTable{
+  margin-top: 30px;
+  border: none;
+  margin-right: 40px;
+}
+
+.onePropertyTable td{
+  border: none;
+}
+.onePropertyImages {
+  text-align: center;
+  width: 700px;
+}
+
+
+/* .columnWidth2 {
+  width: 100px;
+  margin-left: 30px;
+  margin-right: 40px;
+} */
+
+tr {
+  font-size: 18px;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+th {
+  background-color: darkgray;
+  vertical-align: middle;
+}
+
+.transparentCell {
+  background: transparent;
+}
+
+th, td {
+  padding: 5px;
+}
+
+.horizontalAlignment, .horizontalAlignment2, .horizontalAlignmentImages{
+  display: inline-block;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+.horizontalAlignment{
+  margin-left: 40px;
+}
+
+.horizontalAlignment2 {
+  margin-right: 20px;
+}
+
+.horizontalAlignment2 input{
+  width: 130px;
+}
+
+.horizontalAlignmentImages input{
+  margin-right: 10px;
+  width: 350px;
+}
+
+.horizontalAlignmentImages button{
+  margin-right: 40px;
+}
+
+.noOutline:focus{
+  outline: none;
+}
+
+.blankLine {
+  padding-bottom: 30px;
+}
+
+
+
+.rowHeight {
+  height: 30px;
+}
+
+.container {
+  width: 100%;
+  margin: 0px auto;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px 30px 30px 30px;
+}
+
+u{
+  text-decoration: underline;
+}
