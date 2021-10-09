@@ -1,29 +1,25 @@
-Pet Shelter - 9/18/2021
+Solo Project Proposal - https://login.codingdojo.com/m/97/6237/44911
+It's time to start putting your bootcamp skills to something you want to share with the world!
 
-In this belt exam you will create a pet shelter where users can put up pets for adoption, and adopt pets.
+Begin by coming up with an idea, either from the listed wireframes, or your own design. You should then build up a feature list for what you would want to include in the Presentation (Minimum Viable Product) and features that would be cool but not crucial (product backlog).
 
-For a red belt:
-Dashboard: Display all of the pets currently available to be adopted
-Users can add pets to be put up for adoption (user can create pets)
-A pet details page exists that displays information about that pet
-Users can update the information about a pet
-Users can adopt the pet which will remove it from the database
-Validations
-Pet name, pet type, and pet description are all required and must be 3 characters or longer
-Pets may have between 0 and 3 skills
-For a black belt:
-Deployed on Amazon EC2
-And 2 of the following:
-
-Socket.io - when a pet is adopted, remove it from the table for all users viewing the dashboard
-Sort the pets in the shelter by type
-Include a button to like a pet, disable it when clicked until the component reloads
-Apply validations when updating
-Ensure the pet name is unique when adding it to the database
-
-General Guidelines
-Do everything the prompts ask for. Ask your instructor if you are not sure.
-Download the wireframe here: PetShelter
+Project Requirements
+Required
+(1) Log and Reg with validations
+(1) User can [create] object to database
+(1) User can [read] or view objects retrieved from database
+(1) User may like, favorite, rsvp etc. [many-to-many]
+(1) Use of Django Templating engine (loop to render db data, conditional rendering)
+(1) User may [edit] profile or posted data
+(1) User may [delete] profile or posted data
+(1) Application includes protected route (user must be in session to view)
+(1) Application features static content (CSS, images, JS)
+(1) Created data must be validated (events cannot be in the past, wall posts must include content, no duplicate data, etc)
+Bonus
+(1) Application is responsive
+(1) Application is publicly deployed
+(1) File Upload
+(1) Application features an API
 
 ---
 
