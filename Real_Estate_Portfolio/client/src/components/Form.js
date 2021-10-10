@@ -69,15 +69,6 @@ const Form = (props) =>{
     //     });
     // });    
 
-
-
-    
-
-
-
-
-
-
    //ABLE TO GET THE SELECT IMAGE BUT NOT UPLOADING
   const uploadHandler = async (e) => {
     e.preventDefault();
@@ -348,7 +339,7 @@ const Form = (props) =>{
 
         <div className="horizontalAlignmentImages">
                 <label htmlFor="beforeImages"><strong><u>Before Images</u>:  </strong>
-                    { filename } </label>
+                    { filename }</label>
                 <input style={{ border: "none", backgroundColor: "lightgray", marginRight: "30px"}} onChange={ fileSelectedHandler } type="file" name={images}/>
                 {
                     errors.beforeImages ?
@@ -361,7 +352,7 @@ const Form = (props) =>{
 
             <div className="horizontalAlignmentImages">
                 <label htmlFor="afterImages"><strong><u>After Images</u>:  </strong>
-                    { filename } </label>
+                    { filename }</label>
                 <input style={{ border: "none", backgroundColor: "lightgray"}} onChange={ fileSelectedHandler } type="file" name={images}/>
                 
 

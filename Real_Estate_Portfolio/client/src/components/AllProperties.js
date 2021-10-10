@@ -10,7 +10,6 @@ const AllProperties = (props) =>{
 
     //set state for list of all properties
     const [ propertyList, setPropertyList] = useState([]);
-    const [ property, setProperty ] = useState([]); 
     const [ isAscendingOrder, setIsAscendingOrder] = useState({
         category: false,
         state: false,

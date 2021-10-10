@@ -6,6 +6,7 @@ import Header from './Header';
 
 const OneProperty = (props) =>{
     const [ errors, setErrors ] = useState({});
+    const [ filename, setFilename ] = useState("");
     const [ uploadedFile, setUploadedFile ] = useState({});
     const [oneProperty, setOneProperty] = useState({});
 
@@ -71,7 +72,7 @@ return(
 
         <div className="onePropertyImages">
             <h3>Before Restoration</h3>
-            <p>{oneProperty.beforeImages}</p>
+            <p>Uploaded image here -- NOT happening, WHYYYYYYYY????</p>
 
             {uploadedFile ? (
                 <h3>{ uploadedFile.fileName }</h3>,
@@ -81,7 +82,7 @@ return(
 
 
             <h3>After Restoration</h3>
-            <p>{oneProperty.afterImages}</p>
+            <p>Uploaded image here -- NOT happening, WHYYYYYYYY????</p>
 
             {uploadedFile ? (
                 <h3>{ uploadedFile.fileName }</h3>,
