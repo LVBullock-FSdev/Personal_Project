@@ -34,6 +34,8 @@ const NewProperty = (props) =>{
         {
             withCredentials: true
         })
+
+        //CHECK FOR DUPLICATES????
         .then((res) => {
             console.log(res);
             console.log(res.data);

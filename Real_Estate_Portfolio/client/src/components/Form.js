@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { navigate } from '@reach/router';
 // const fs = require('fs');
 // const path = require('path');
 // const multer = require('multer');
@@ -12,10 +13,13 @@ const Form = (props) =>{
     const [ images, setImages ] = useState("");
     const [ filename, setFilename ] = useState("");
     const [ uploadedFile, setUploadedFile ] = useState({});
+    const [ propertyList, setPropertyList] = useState([]);
+
 
     // submit handler will either = editPropertyHandler ORRR newSubmitHandler
     // based upon which value it was given when it was passed as a prop. 
     const {submitHandler, buttonText, property, setProperty, errors} = props;
+
 
     
   const fileSelectedHandler = (e) => {
@@ -285,7 +289,6 @@ const Form = (props) =>{
         <div className="horizontalAlignment2">
             <label htmlFor="purchasePrice"><strong><u>Purchase Price</u>:  </strong></label>
 
-            {/* <CurrencyFormat name="purchasePrice" value={1000000}  thousandSeparator={true} prefix={'$'} /> */}
             <input onChange={newChangeHandler} name="purchasePrice" placeholder="$0,000,000" type="number" pattern="$^\$\d{1,3}(,\d{3})?$" value={property.purchasePrice} data-type="currency"/>
             {
                 errors.purchasePrice ?

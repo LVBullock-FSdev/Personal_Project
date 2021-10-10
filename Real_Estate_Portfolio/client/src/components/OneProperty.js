@@ -5,8 +5,7 @@ import DeleteProperty from './DeleteProperty';
 import Header from './Header';
 
 const OneProperty = (props) =>{
-    const [ errors, setErrors ] = useState({});
-    const [ filename, setFilename ] = useState("");
+
     const [ uploadedFile, setUploadedFile ] = useState({});
     const [oneProperty, setOneProperty] = useState({});
 
