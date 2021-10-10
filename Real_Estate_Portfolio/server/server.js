@@ -2,18 +2,25 @@
 
 require("dotenv").config() // for login & registration
 
-const express = require("express", "express-fileUpload");
-// const express = require("express-fileupload");
-
+// const express = require("express", "express-fileUpload");
+const express = require('express');
 const cors = require('cors'); //if not here, will have a lot of errors
 const cookieParser = require("cookie-parser");
-const fileUpload = require("express-fileupload");
 const app = express(); //ensure that the express method is running
 
+const fs = require('fs');
+const path = require('path');
+const formidable = require('formidable');
+
+
+// const fileUpload = require("express-fileupload");
+// const bodyParser = require('body-parser');
+
 app.use(express.json());
-app.use(fileUpload());
+// app.use(fileUpload());
 //allows express to pass json easily from the frontend to the backend
-app.use(express.urlencoded({ extended: true }));  
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cors({
     //connected to user information enables us to validate who is logging in, posting, etc.
     credentials: true,
@@ -23,22 +30,55 @@ app.use(cors({
 
 app.use(cookieParser());
 
-app.post("/upload", (req, res) => {
-    if(req.files === null) {
-        return res.status(400).json({msg: "No file uploaded"});
-    }
-
-    const images = req.files.images;
-
-    images.mv(`${__dirname}/client/public/uploads/${images.name}`, err => {
-        if(err){
-            console.log.error(err);
-            return res.status(500).send(err);
-        }
-
-        res.json({ fileName: images.name, filePath: `/uploads/${images.name}`});
-    });
+app.post('/api/upload', (req, res, next) => {
+    
+    const form = new formidable.IncomingForm();
+    form.parse(req, function(err, fields, files){
+  
+        const oldPath = files.profilePic.path;
+        const newPath = path.join(__dirname, 'uploads')
+                + '/'+files.profilePic.name
+        const rawData = fs.readFileSync(oldPath)
+      
+        fs.writeFile(newPath, rawData, function(err){
+            if(err) console.log(err)
+            return res.send("Successfully uploaded")
+        })
+  })
 });
+
+// app.get('/', (req, res) => {
+//     imgModel.find({}, (err, items) => {
+//         if (err) {
+//             console.log(err);
+//             res.status(500).send('An error occurred', err);
+//         }
+//         else {
+//             res.render('imagesPage', { items: items });
+//         }
+//     });
+// })
+
+// app.post('/', upload.single('image'), (req, res, next) => {
+  
+//     const obj = {
+//         name: req.body.name,
+//         desc: req.body.desc,
+//         img: {
+//             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+//             contentType: 'image/png/jpeg'
+//         }
+//     }
+//     imgModel.create(obj, (err, item) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         else {
+//             // item.save();
+//             res.redirect('/');
+//         }
+//     });
+// });
 
 // //allow mongoose.config to run
 //comment out these 2 lines until needed
@@ -48,6 +88,10 @@ require('./config/mongoose.config');
 require('./routes/property.routes')(app);
 //--after setting this in the portfolio.routes.js file
 require('./routes/user.routes')(app);
+
+
+
+
 
 
 

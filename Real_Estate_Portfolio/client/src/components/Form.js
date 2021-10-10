@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// import CurrencyInput from 'react-currency-input-field';
-// import CurrencyFormat from 'react-currency-format';
+// const fs = require('fs');
+// const path = require('path');
+// const multer = require('multer');
+
+// const imgModel = require('./model'); //where does this go????
+
 
 const Form = (props) =>{
 
@@ -19,6 +23,62 @@ const Form = (props) =>{
     // setFilename(e.target.files[0].name); //this is showing the uploaded file name before the "choose file button"
   };
 
+
+    //THIS IS NOT WORKING FOR IMAGE UPLOAD.  How do I get the image.model??
+    // const storage = multer.diskStorage({
+    //     destination: (req, file, cb) => {
+    //         cb(null, 'uploads')
+    //     },
+    //     filename: (req, file, cb) => {
+    //         cb(null, file.fieldname + '-' + Date.now())
+    //     }
+    // });
+  
+    // const upload = multer({ storage: storage });
+
+    // axios.get('/', (req, res) => {
+    //     imgModel.find({}, (err, items) => {
+    //         if (err) {
+    //             console.log(err);
+    //             res.status(500).send('An error occurred', err);
+    //         }
+    //         else {
+    //             res.render('imagesPage', { items: items });
+    //         }
+    //     });
+    // })
+    
+    // axios.post('/', upload.single('image'), (req, res, next) => {
+      
+    //     const obj = {
+    //         name: req.body.name,
+    //         desc: req.body.desc,
+    //         img: {
+    //             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+    //             contentType: 'image/png/jpeg'
+    //         }
+    //     }
+    //     imgModel.create(obj, (err, item) => {
+    //         if (err) {
+    //             console.log(err);
+    //         }
+    //         else {
+    //             // item.save();
+    //             res.redirect('/');
+    //         }
+    //     });
+    // });    
+
+
+
+    
+
+
+
+
+
+
+   //ABLE TO GET THE SELECT IMAGE BUT NOT UPLOADING
   const uploadHandler = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -46,7 +106,6 @@ const Form = (props) =>{
             console.log(err);
             console.log(err.response.data);
         }
-
     }
 }
     
@@ -303,7 +362,7 @@ const Form = (props) =>{
             <div className="horizontalAlignmentImages">
                 <label htmlFor="afterImages"><strong><u>After Images</u>:  </strong>
                     { filename } </label>
-                <input style={{ border: "none", backgroundColor: "lightgray"}} onChange={ fileSelectedHandler } type="file" name={images} />
+                <input style={{ border: "none", backgroundColor: "lightgray"}} onChange={ fileSelectedHandler } type="file" name={images}/>
                 
 
                 <button className="uploadBtn" onClick={uploadHandler} style={{height: "30px", backgroundColor: "black", color: "white"}}>Upload</button>

@@ -45,7 +45,8 @@ const EditProperty = (props) =>{
         .then((res)=>{
             console.log(res);
             console.log(res.data);
-            navigate('/property');
+            console.log("Property successfully updated.");
+            navigate(`/property/${props.id}`); //want to go to details page, this going back to all properties
         })
         .catch((err)=>{
             console.log(err);

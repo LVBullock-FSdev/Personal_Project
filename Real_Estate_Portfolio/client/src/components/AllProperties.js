@@ -11,8 +11,13 @@ const AllProperties = (props) =>{
     //set state for list of all properties
     const [ propertyList, setPropertyList] = useState([]);
     const [ property, setProperty ] = useState([]); 
-    const [ isAscendingOrder, setIsAscendingOrder] = useState([propertyList]);
-    // const propertyList.category = [propertyList.category];
+    const [ isAscendingOrder, setIsAscendingOrder] = useState({
+        category: false,
+        state: false,
+        zip: false,
+        opportunityZone: false,
+        netProfit: false
+    });
 
     //useEffect renders when the page loads and when the state changes
     //all of this in useEffect is an asynchronous operation
@@ -25,7 +30,6 @@ const AllProperties = (props) =>{
             .then((res) =>{
                 console.log(res);
                 console.log(res.data);
-                console.log(_.isEmpty(res.data));  //returns true or false
                 setPropertyList(res.data);
             })
             .catch((err)=> {
@@ -42,22 +46,46 @@ const AllProperties = (props) =>{
 
     }, [])
 
-        //sorting with lodash.com
-        // const orderByHandler = (e) => {
-        //     let categories = [property.category];
-        //     _.orderBy(categories, [property.category], ['asc'], ['desc']);
-        // };
-
+    //sorting with lodash.com
     const orderByHandler = (e) => {
         let orderBy = e.currentTarget.name;
         let orderList = propertyList;
+        console.log(orderList);
 
-        if(orderBy === "name"){
-            if(!isAscendingOrder.name)
+        if(orderBy === "category"){
+            if(!isAscendingOrder.category)
                 orderList = _.orderBy(propertyList, ['category'], ['desc'])
             else
                 orderList = _.orderBy(propertyList, ['category'], ['asc'])
-            setIsAscendingOrder({...setIsAscendingOrder, name:!isAscendingOrder.name});
+            setIsAscendingOrder({...setIsAscendingOrder, category:!isAscendingOrder.category});
+        }
+        else if(orderBy === "state"){
+            if(!isAscendingOrder.state)
+                orderList = _.orderBy(propertyList, ['state'], ['desc'])
+            else
+                orderList = _.orderBy(propertyList, ['state'], ['asc'])
+            setIsAscendingOrder({...setIsAscendingOrder, state:!isAscendingOrder.state});
+        }
+        else if(orderBy === "zip"){
+            if(!isAscendingOrder.zip)
+                orderList = _.orderBy(propertyList, ['zip'], ['desc'])
+            else
+                orderList = _.orderBy(propertyList, ['zip'], ['asc'])
+            setIsAscendingOrder({...setIsAscendingOrder, zip:!isAscendingOrder.zip});
+        }
+        else if(orderBy === "opportunityZone"){
+            if(!isAscendingOrder.opportunityZone)
+                orderList = _.orderBy(propertyList, ['opportunityZone'], ['desc'])
+            else
+                orderList = _.orderBy(propertyList, ['opportunityZone'], ['asc'])
+            setIsAscendingOrder({...setIsAscendingOrder, opportunityZone:!isAscendingOrder.opportunityZone});
+        }
+        else if(orderBy === "netProfit"){
+            if(!isAscendingOrder.netProfit)
+                orderList = _.orderBy(propertyList, ['netProfit'], ['desc'])
+            else
+                orderList = _.orderBy(propertyList, ['netProfit'], ['asc'])
+            setIsAscendingOrder({...setIsAscendingOrder, netProfit:!isAscendingOrder.netProfit});
         }
         console.log(orderList);
         setPropertyList(orderList);
@@ -80,16 +108,16 @@ const AllProperties = (props) =>{
                     <th className="transparentCell" scope="col"></th>
                     <th className="transparentCell" scope="col"></th>
                     <tr className="tableHeadRow2">
-                        <th name={property.category}><button onclick={ orderByHandler } className="headerRowBtn">Category<small>&#9660;&#9650;</small> </button></th>
+                        <th><button name="category" onClick={ orderByHandler } className="headerRowBtn">Category<small>&#9660;&#9650;</small></button></th>
                         <th>Street Address</th>
                         <th>City</th>
-                        <th name="state">State<small>&#9660;&#9650;</small></th>
-                        <th name="zip">Zip<small>&#9660;&#9650;</small></th>
-                        <th name="opportunityZone">Opportunity Zone <small>&#9660;&#9650;</small></th>
+                        <th><button name="state" onClick={ orderByHandler } className="headerRowBtn">State<small>&#9660;&#9650;</small></button></th>
+                        <th><button name="zip" onClick={ orderByHandler } className="headerRowBtn">Zip<small>&#9660;&#9650;</small></button></th>
+                        <th><button name="opportunityZone" onClick={ orderByHandler } className="headerRowBtn">Opportunity Zone<small>&#9660;&#9650;</small></button></th>
                         <th>Purchase<br/>Price</th>
                         <th>Rehab<br/>Cost</th>
                         <th>ARV</th>
-                        <th name="netProfit">Net<small>&#9660;&#9650;</small><br/> Profit</th>
+                        <th><button name="netProfit" onClick={ orderByHandler } className="headerRowBtn">Net<small>&#9660;&#9650;</small></button><br/> Profit</th>
                         <th>Actions</th>
                     </tr>
                 </thead>

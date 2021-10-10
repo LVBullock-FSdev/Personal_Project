@@ -129,6 +129,11 @@ const PropertySchema = new mongoose.Schema({
 
     afterImages:{
         type: String,
+    },
+
+    img:{
+        data: Buffer,
+        contentType: String
     }
 
 
