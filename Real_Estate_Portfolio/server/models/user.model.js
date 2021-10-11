@@ -73,6 +73,27 @@ UserSchema.pre("save", function(next){
 const User = mongoose.model("User", UserSchema);
 //This returns a product model with the collection name and that schema
 
+// UserSchema.statics.emailExists = async function(email){ //don't know how to incorporate this
+
+//     if(!email){
+//        throw new Error('Invalid Email'); 
+//     } 
+//     try{
+//     const user = await this.findOne({email})
+//         if(user){
+//             return false 
+//         } 
+//         else{
+//             return true; 
+//         }
+//     }
+//     catch (error) {
+//         console.log('error inside emailExists method', error.message);
+//         return false
+//     }
+
+// }
+
 module.exports = User;
 
 

@@ -30,8 +30,11 @@ module.exports = {
             })
             .catch((err) => {
                 console.log("UNSUCCESSFUL registration!");
-                console.log(err);
                 res.status(400).json(err);
+                res.json({
+                    unsuccessfulMessage: "Email not available!"
+                })
+                console.log(err);
             })
     },
 

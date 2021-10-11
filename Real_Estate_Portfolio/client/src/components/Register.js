@@ -1,8 +1,10 @@
 import React, { useState} from "react";
 import axios from "axios";
+import {navigate} from "@reach/router";
 
 const Register = props => {
     const [confirmReg, setConfirmReg] = useState("");
+    const [unsuccessfulReg, setunsuccessfulReg] = useState("");
     const [errs, setErrs] = useState({});
 
     //using a single state object to hold all data!
@@ -48,13 +50,24 @@ const Register = props => {
             })
             .catch((err) =>{
                 console.log(err);
-                setErrs(err.response.data.errors);
+                console.log(err.response.data.errors);
+                console.log("Email and or User Name not available!");
+                if(err.response.data.errors){
+                    setunsuccessfulReg("Email not available!");
+                    setErrs(err.response.data.errors);
+                }
+                navigate("/");
             });
     };
 
     return (
         <div>
             <h2>Register</h2>
+            {
+                unsuccessfulReg ?
+                <h4 style={{backgroundColor: "yellow", color: "red", textAlign: "center"}}>{unsuccessfulReg}</h4>
+                : null
+            }
             {
                 confirmReg ?
                     <h4 style={{backgroundColor: "mediumSpringGreen", color: "green", textAlign: "center"}}>{confirmReg}</h4>
@@ -63,6 +76,7 @@ const Register = props => {
             <form className="regLogForm" onSubmit={register}>
                 <div>
                     <label>User Name</label>
+
                     {
                         errs.userName ?
                             <span className="error-text"> { errs.userName.message }</span>
