@@ -171,10 +171,6 @@ button .headerLogoutBtn{
   color: green;
 }
 
-.uploadBtn:hover{
-  color: black;
-}
-
 .headerLogoutBtn:hover{
   color: orange;
 }
@@ -183,7 +179,12 @@ button .headerLogoutBtn{
   color: red;
 }
 
-.uploadBtn:hover{
+button.uploadBtn{
+  background-color: black;
+  box-shadow: 10px 10px 11px;
+
+}
+.horizontalAlignmentImages:hover, .uploadBtn:hover{
   color: blue;
 }
 
@@ -237,13 +238,6 @@ div .onePropertyImages {
   text-align: center;
   width: 700px;
 }
-
-
-/* .columnWidth2 {
-  width: 100px;
-  margin-left: 30px;
-  margin-right: 40px;
-} */
 
 tr {
   font-size: 18px;
@@ -300,8 +294,6 @@ th, td {
 .blankLine {
   padding-bottom: 30px;
 }
-
-
 
 .rowHeight {
   height: 30px;
