@@ -71,7 +71,7 @@ return(
 
         <div className="onePropertyImages">
             <h3>Before Restoration</h3>
-            <p>Uploaded image here -- NOT happening, WHYYYYYYYY????</p>
+            <p>Uploaded image here -- NOT happening &#128561; - AAARRRGH! &#128547;</p>
 
             {uploadedFile ? (
                 <h3>{ uploadedFile.fileName }</h3>,
@@ -81,7 +81,7 @@ return(
 
 
             <h3>After Restoration</h3>
-            <p>Uploaded image here -- NOT happening, WHYYYYYYYY????</p>
+            <p>Uploaded image here -- NOT happening &#128561; - AAARRRGH! &#128547;</p>
 
             {uploadedFile ? (
                 <h3>{ uploadedFile.fileName }</h3>,
@@ -89,6 +89,7 @@ return(
             ) : null
             }
         </div>
+        
     </div>
     )
 }

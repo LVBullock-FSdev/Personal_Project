@@ -7,6 +7,7 @@ import EditProperty from './components/EditProperty';
 import OneProperty from './components/OneProperty';
 import Login from './components/Login';
 import RegLog from './views/RegLog';
+import Footer from './components/Footer';
 
 //1. Re-use Delete
 //2. Edit, Form, New... Let's restructure!
@@ -32,6 +33,8 @@ function App() {
         <OneProperty path="/property/:id" />
         <EditProperty path="/property/edit/:id" />
       </Router>
+
+      <Footer />
 
     </div>
   );
