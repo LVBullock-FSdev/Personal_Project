@@ -31,9 +31,6 @@ module.exports = {
             .catch((err) => {
                 console.log("UNSUCCESSFUL registration!");
                 res.status(400).json(err);
-                // res.json({
-                //     unsuccessfulMessage: "UNSUCCESSFUL registration!"
-                // })
                 console.log(err);
             })
     },
@@ -88,8 +85,24 @@ module.exports = {
             .catch((err) => {
                 console.log(err);
                 res.status(400).json({message: "Invalid Login Attempt"});
-            })         
+            })
+            
+
     },
+
+    //READ - GET USER
+    findOneUser: (req, res) => {
+        console.log("Displaying user.");
+
+        //id will come to use from the param/url/route call   (using GET)         /api/properties/:id
+        User.findOne({ _id: req.params.id })      
+        .then((oneUser) =>res.json(oneUser))
+        .catch((err) => {
+            console.log("Find One User failed");
+            res.status(400).json(err)            
+        })
+    },
+    
 
     logout: (req, res) => {
         console.log("User has logged out");

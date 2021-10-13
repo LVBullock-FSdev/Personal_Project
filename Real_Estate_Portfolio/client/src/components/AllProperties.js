@@ -7,6 +7,7 @@ import _ from 'lodash';
 
 const AllProperties = (props) =>{
     const [ errors, setErrors ] = useState({});
+    // const [oneUser, setOneUser] = useState({});
 
     //set state for list of all properties
     const [ propertyList, setPropertyList] = useState([]);
@@ -155,6 +156,9 @@ const AllProperties = (props) =>{
                     }
                     </tbody>
             </table>
+            <p style={{fontSize: "14px", position: "fixed", bottom: "20px"}}>Current user: (how do I get the user's name)</p>
+
+
         </div>
     </body>
     )
