@@ -51,11 +51,11 @@ const Register = props => {
             .catch((err) =>{
                 console.log(err);
                 console.log(err.response.data.errors);
-                console.log("Email and or User Name not available!");
-                if(err.response.data.errors){
-                    setunsuccessfulReg("Email not available!");
-                    setErrs(err.response.data.errors);
-                }
+                // if(err.response.data.errors){
+                //     setunsuccessfulReg("UNSUCCESSFUL REGISTRATION!");
+                //     setErrs(err.response.data.errors);
+                // }
+                setunsuccessfulReg("UNSUCCESSFUL REGISTRATION:  Email not available!");
                 navigate("/");
             });
     };
